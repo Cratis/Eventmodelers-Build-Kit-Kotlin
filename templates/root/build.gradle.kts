@@ -1,26 +1,53 @@
 plugins {
-    kotlin("jvm") version "1.9.20"
-    application
+    kotlin("jvm") version "2.4.20"
+    kotlin("plugin.spring") version "2.4.20"
+    id("com.google.devtools.ksp") version "2.3.12"
+    id("org.springframework.boot") version "4.1.1"
+    id("io.spring.dependency-management") version "1.1.7"
 }
 
 group = "io.cratis"
 version = "0.0.1"
 
-java {
-    sourceCompatibility = JavaVersion.VERSION_17
-    targetCompatibility = JavaVersion.VERSION_17
-}
-
-application {
-    mainClass.set("io.cratis.KotlinAppKt")
-}
-
-repositories {
-    mavenCentral()
-}
-
 dependencies {
-    implementation("io.cratis:chronicle-client-kotlin:latest")
-    implementation("io.cratis:arc-kotlin:latest")
-    testImplementation(kotlin("test"))
+    implementation("io.cratis:arc-chronicle-spring-boot-starter:7.2.0")
+    implementation("org.springframework.boot:spring-boot-starter-webmvc")
+    implementation(kotlin("reflect"))
+    ksp("io.cratis:arc-ksp:7.2.0")
+
+    testImplementation("io.cratis:arc-testing:7.2.0")
+    testImplementation("org.springframework.boot:spring-boot-starter-test")
+}
+
+// The Arc integration libraries are built against the coroutines version pinned in io.cratis:arc.
+// Spring Boot's dependency management pins an older kotlinx-coroutines; keep the starter's runtime
+// on the version the Cratis libraries were compiled with.
+dependencyManagement {
+    dependencies {
+        dependency("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.11.0")
+        dependency("org.jetbrains.kotlinx:kotlinx-coroutines-core-jvm:1.11.0")
+    }
+}
+
+ksp {
+    arg("arc.moduleName", "CratisApp")
+}
+
+kotlin {
+    jvmToolchain(17)
+}
+
+// Slices live in <Module>/<Feature>/<Slice>/ folders at the project root (like the C# starter),
+// tests mirror them under Tests/.
+sourceSets {
+    main {
+        kotlin.srcDir("SomeModule")
+    }
+    test {
+        kotlin.srcDir("Tests")
+    }
+}
+
+tasks.test {
+    useJUnitPlatform()
 }

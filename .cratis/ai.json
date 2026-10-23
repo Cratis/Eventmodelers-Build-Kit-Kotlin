@@ -11,7 +11,8 @@
   "profiles": [
     "cratis/application/kotlin",
     "cratis/arc/kotlin",
-    "cratis/chronicle/kotlin"
+    "cratis/chronicle/kotlin",
+    "cratis/engineering/core"
   ],
   "languages": [
     "kotlin"

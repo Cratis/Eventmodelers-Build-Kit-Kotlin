@@ -1,6 +1,6 @@
 ---
 title: Install the Kit
-description: Install the Eventmodelers Build Kit - Kotlin into your project directory
+description: Set up the Kotlin Eventmodelers Build Kit in your project with Node.js and JDK 17, add board credentials and MCP configuration, and launch the agent.
 tableOfContents: false
 ---
 

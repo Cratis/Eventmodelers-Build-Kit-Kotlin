@@ -1,6 +1,6 @@
 ---
 title: Kit Directory Name
-description: Decision to use .build-kit as the kit directory name
+description: The Kotlin Eventmodelers Build Kit stores runtime files, prompts and skills in .build-kit to match the platform contract and keep CLI commands working.
 status: Accepted
 date: 2025-01-15
 deciders: Cratis Team

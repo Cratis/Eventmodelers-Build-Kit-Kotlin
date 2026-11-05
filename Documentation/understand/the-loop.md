@@ -1,6 +1,6 @@
 ---
 title: The Loop and Triggers
-description: How the Eventmodelers Build Kit - Kotlin agent loop decides what to do next
+description: Trace the Kotlin Eventmodelers Build Kit loop from task polling to slice generation, including build-skill selection and operation without board sync.
 tableOfContents: false
 ---
 

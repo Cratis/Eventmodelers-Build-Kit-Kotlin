@@ -1,6 +1,6 @@
 ---
 title: Connect a Board
-description: Set up Eventmodelers board credentials for the Build Kit - Kotlin
+description: Configure Eventmodelers board access for the Kotlin Build Kit, locate credential files, verify the connection and replace organization IDs or tokens.
 tableOfContents: false
 ---
 

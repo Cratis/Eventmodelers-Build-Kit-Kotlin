@@ -1,6 +1,6 @@
 ---
 title: CLI Commands
-description: Command reference for the Eventmodelers Build Kit - Kotlin installer CLI
+description: Use the Kotlin Eventmodelers Build Kit CLI to install or remove kit files and check status, then launch a Claude or Ollama agent loop with Node.js.
 tableOfContents: false
 ---
 

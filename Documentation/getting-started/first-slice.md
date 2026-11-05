@@ -1,6 +1,6 @@
 ---
 title: Run Your First Slice
-description: See a slice go from Planned to Done with the Eventmodelers Build Kit - Kotlin
+description: Follow a Kotlin slice through the Eventmodelers Build Kit from Planned to tested Cratis code, checking generated files and Gradle output along the way.
 tableOfContents: false
 ---
 
